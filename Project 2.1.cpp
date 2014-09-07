@@ -72,8 +72,6 @@ int main()
 							else
 								membershipFee = CHILDMALE_PRICE * tax;
 							cout << "Hello Mr. " << fullName;
-							cout << ", your membership fee is " << membershipFee;
-							cout << " (10% tax is included).\n";
 							break;
 		
 		case 'f': case 'F': if(age > 19)
@@ -83,8 +81,6 @@ int main()
 							else
 								membershipFee = CHILDFEMALE_PRICE * tax;
 							cout << "Hello Ms./Mrs. " << fullName;
-							cout << ", your membership fee is " << membershipFee;
-							cout << " (10% tax is included).\n";
 							break;
 		
 		default:			cout << "Invalid gender, exiting program\n";
@@ -92,6 +88,9 @@ int main()
 							exit(1);
 	}
 	
+	cout << ", your membership fee is " << membershipFee;
+	cout << " (10% tax is included).\n";
+
 	// Display time and date of program execution.
 	time_t p;
 	time(&p);
@@ -102,20 +101,20 @@ int main()
 }
 /*-------------------------OUTPUT-----------------------------------------------------
 ----Fullerton Health Club-----
-Children (Age 1-12)......
+Children (Age 1-12)
         Male.............50.00
         Female...........55.00
-Teenagers (Age 13-19)....
+Teenagers (Age 13-19)
         Male............150.00
         Female..........155.00
-Adults (Age > 19)........
+Adults (Age > 19)
         Male............275.00
         Female..........250.00
 Enter your age: 48
 Enter your gender(m/f): M
 Enter your full name: Barack H Obama
 Hello Mr. Barack H Obama, your membership fee is 302.50 (10% tax is included).
-Time of execution: Sun Sep 07 10:38:13 2014
+Time of execution: Sun Sep 07 13:41:28 2014
 
 Press any key to continue . . .
 ------------------------------------------------------------------------------------*/
