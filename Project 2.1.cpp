@@ -37,15 +37,15 @@ int main()
 	cout << fixed << showpoint << setprecision(2);
 	cout << "----Fullerton Health Club-----\n";
 	
-	cout << left << setw(25) << "Children (Age 1-12)" << endl;
+	cout << left << setw(19) << "Children (Age 1-12)" << endl;
 	cout << left << setw(15) << "\tMale" << right << setw(8) << CHILDMALE_PRICE << endl;
 	cout << left << setw(15) << "\tFemale" << right << setw(8) << CHILDFEMALE_PRICE << endl;
 	
-	cout << left << setw(25) << "Teenagers (Age 13-19)" << endl;
+	cout << left << setw(21) << "Teenagers (Age 13-19)" << endl;
 	cout << left << setw(15) << "\tMale" << right << setw(8) << TEENMALE_PRICE << endl;
 	cout << left << setw(15) << "\tFemale" << right << setw(8) << TEENFEMALE_PRICE << endl;
 
-	cout << left << setw(25) << "Adults (Age > 19)" << endl;
+	cout << left << setw(17) << "Adults (Age > 19)" << endl;
 	cout << left << setw(15) << "\tMale" << right << setw(8) << ADULTMALE_PRICE << endl;
 	cout << left << setw(15) << "\tFemale" << right << setw(8) << ADULTFEMALE_PRICE << endl;
 
