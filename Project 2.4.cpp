@@ -1,12 +1,18 @@
-//---------------------------------------------------------------------------------//
-//                        Name: Alexnader Chiu                                     //
-//                        Project No. 2  Part No. 4                                //
-//                        Due Date: Sept. 11, 2014                                 //
-//                        Course: CPSC-121                                         //
-//                        Instructor: Dr. Ray Ahmadnia                             //
-//	This program will ask the user to input the date in the form of mm/dd/yyyy.    //
-//  It will then display the date in the form of Month Day, Year.                  //
-//---------------------------------------------------------------------------------//
+//================================================================================
+// File: Project 2.4.cpp
+//================================================================================
+// Programmer: Alexander Chiu                                     
+// Date: Sept. 11, 2014                                 
+// Course: CPSC-121
+// Time: Tuesday 3:30
+// Instructor: Dr. Ray Ahmadnia                                                    
+// Project: Project No. 2  Part No. 4 
+// 
+// Description:
+//	This program will ask the user to input the date in the form of mm/dd/yyyy.    
+//  It will then display the date in the form of Month Day, Year.                                                   
+//=================================================================================
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -15,8 +21,17 @@
 
 using namespace std;
 
+//== main =========================================================================
+//
+//=================================================================================
+
 int main()
 {
+	// Display time and date of program execution.
+	time_t p;
+	time(&p);
+	cout << "Time of execution: " << ctime(&p) << endl;
+
 	// Declare variables
 	int month, day, year;
 	string nameOfMonth;
@@ -78,18 +93,13 @@ int main()
 							  break;
 	}
 
-	// Display time and date of program execution.
-	time_t p;
-	time(&p);
-	cout << "Time of execution: " << ctime(&p) << endl;
-
 	system("PAUSE");
 	return 0;
 }
 /*-------------------------OUTPUT-----------------------------------------------------
+Time of execution: Wed Sep 10 05:52:41 2014
+
 Enter today's date: 9/10/2014
 Today is Sept 10th, 2014
-Time of execution: Sun Sep 07 14:26:55 2014
-
 Press any key to continue . . .
 ------------------------------------------------------------------------------------*/
