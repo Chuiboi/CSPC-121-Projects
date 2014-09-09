@@ -1,13 +1,19 @@
-//---------------------------------------------------------------------------------//
-//                        Name: Alexnader Chiu                                     //
-//                        Project No. 2  Part No. 3                                //
-//                        Due Date: Sept. 11, 2014                                 //
-//                        Course: CPSC-121                                         //
-//                        Instructor: Dr. Ray Ahmadnia                             //
-//	This program will ask the user for the number of drinks and sandwiches.        //
-//  It will then ask them for the size. The program will display a table with      //
-//  prices, and the program will determine the total bill.                         //
-//---------------------------------------------------------------------------------//
+//================================================================================
+// File: Project 2.3.cpp
+//================================================================================
+// Programmer: Alexander Chiu                                     
+// Date: Sept. 11, 2014                                 
+// Course: CPSC-121
+// Time: Tuesday 3:30
+// Instructor: Dr. Ray Ahmadnia                                                    
+// Project: Project No. 2  Part No. 3 
+// 
+// Description:
+//	This program will ask the user for the number of drinks and sandwiches.        
+//  It will then ask them for the size. The program will display a table with      
+//  prices, and the program will determine the total bill.                                                                       
+//=================================================================================
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -23,8 +29,17 @@ const float TWELVEINCH_PRICE = 4.00;
 
 using namespace std;
 
+//== main =========================================================================
+//
+//=================================================================================
+
 int main()
 {
+	// Display time and date of program execution.
+	time_t p;
+	time(&p);
+	cout << "Time of execution: " << ctime(&p) << endl;
+
 	// Declare variables
 	int numberOfDrinks, numberOfSandwiches, sandwichLength;
 	char size;
@@ -91,15 +106,12 @@ int main()
 	bill = priceOfDrinks + priceOfSandwich;
 	cout << "Total bill = " << bill << endl;
 
-	// Display time and date of program execution.
-	time_t p;
-	time(&p);
-	cout << "Time of execution: " << ctime(&p) << endl;
-
 	system("PAUSE");
 	return 0;
 }
 /*-------------------------OUTPUT-----------------------------------------------------
+Time of execution: Wed Sep 10 05:49:12 2014
+
 ----------Menu-----------
 Drinks
         Small.............1.20
@@ -113,7 +125,5 @@ How many drinks? 3
 How many sandwiches? 3
         What size(12/10 inches)? 10
 Total bill = 15.75
-Time of execution: Sun Sep 07 13:28:54 2014
-
 Press any key to continue . . .
 ------------------------------------------------------------------------------------*/
