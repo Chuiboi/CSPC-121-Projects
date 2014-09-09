@@ -1,12 +1,18 @@
-//---------------------------------------------------------------------------------//
-//                        Name: Alexnader Chiu                                     //
-//                        Project No. 2  Part No. 2                                //
-//                        Due Date: Sept. 11, 2014                                 //
-//                        Course: CPSC-121                                         //
-//                        Instructor: Dr. Ray Ahmadnia                             //
-//	This program will ask the user for two fractions. The user will also enter     //
-//  their desired operator. The program will calculate and display the answer.     //
-//---------------------------------------------------------------------------------//
+//================================================================================
+// File: Project 2.2.cpp
+//================================================================================
+// Programmer: Alexander Chiu                                     
+// Date: Sept. 11, 2014                                 
+// Course: CPSC-121
+// Time: Tuesday 3:30
+// Instructor: Dr. Ray Ahmadnia                                                    
+// Project: Project No. 2  Part No. 2 
+// 
+// Description:
+//	This program will ask the user for two fractions. The user will also enter
+//  their desired operator. The program will calculate and display the answer. 
+//=================================================================================
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -15,8 +21,17 @@
 
 using namespace std;
 
+//== main =========================================================================
+//
+//=================================================================================
+
 int main()
 {
+	// Display time and date of program execution.
+	time_t p;
+	time(&p);
+	cout << "Time of execution: " << ctime(&p) << endl;
+
 	// Declare variables
 	float a, b, c, d, numerator, denominator;
 	char symbol;
@@ -57,21 +72,16 @@ int main()
 	cout << " (" << c << "/" << d << ") = ";
 	cout << numerator << " / " << denominator << endl;
 
-	// Display time and date of program execution.
-	time_t p;
-	time(&p);
-	cout << "Time of execution: " << ctime(&p) << endl;
-
 	system("PAUSE");
 	return 0;
 }
 
 /*-------------------------OUTPUT-----------------------------------------------------
+Time of execution: Wed Sep 10 05:46:22 2014
+
 Enter a fraction: 12/5
 Enter another fraction: 2.1/7.5
         Enter an operation symbol (+,-,*,/): *
                 (12.00/5.00) * (2.10/7.50) = 25.20 / 37.50
-Time of execution: Sun Sep 07 11:57:06 2014
-
 Press any key to continue . . .
 ------------------------------------------------------------------------------------*/
