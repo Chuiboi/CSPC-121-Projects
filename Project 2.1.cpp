@@ -1,13 +1,19 @@
-//---------------------------------------------------------------------------------//
-//                        Name: Alexnader Chiu                                     //
-//                        Project No. 2  Part No. 1                                //
-//                        Due Date: Sept. 11, 2014                                 //
-//                        Course: CPSC-121                                         //
-//                        Instructor: Dr. Ray Ahmadnia                             //
-//	This program will ask the user for their name, age, and gender. It will then   //
-//  display a table with prices, and the program will determine the memebership    //
-//	fee with tax.                                                                  //
-//---------------------------------------------------------------------------------//
+//================================================================================
+// File: Project 2.1.cpp
+//================================================================================
+// Programmer: Alexander Chiu                                     
+// Date: Sept. 11, 2014                                 
+// Course: CPSC-121
+// Time: Tuesday 3:30
+// Instructor: Dr. Ray Ahmadnia                                                    
+// Project: Project No. 2  Part No. 1 
+// 
+// Description:
+//	This program will ask the user for their name, age, and gender. It will then   
+//  display a table with prices, and the program will determine the memebership    
+//	fee with tax.                                                                  
+//=================================================================================
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -24,8 +30,16 @@ const float ADULTFEMALE_PRICE = 250.00;
 
 using namespace std;
 
+//== main =========================================================================
+//
+//=================================================================================
 int main()
 {
+	// Display time and date of program execution.
+	time_t p;
+	time(&p);
+	cout << "Time of execution: " << ctime(&p) << endl;
+
 	// Declare variables
 	int age;
 	char gender;
@@ -91,15 +105,12 @@ int main()
 	cout << ", your membership fee is " << membershipFee;
 	cout << " (10% tax is included).\n";
 
-	// Display time and date of program execution.
-	time_t p;
-	time(&p);
-	cout << "Time of execution: " << ctime(&p) << endl;
-
 	system("PAUSE");
 	return 0;
 }
 /*-------------------------OUTPUT-----------------------------------------------------
+Time of execution: 
+
 ----Fullerton Health Club-----
 Children (Age 1-12)
         Male.............50.00
@@ -114,7 +125,5 @@ Enter your age: 48
 Enter your gender(m/f): M
 Enter your full name: Barack H Obama
 Hello Mr. Barack H Obama, your membership fee is 302.50 (10% tax is included).
-Time of execution: Sun Sep 07 13:41:28 2014
-
 Press any key to continue . . .
 ------------------------------------------------------------------------------------*/
