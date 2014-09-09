@@ -1,12 +1,18 @@
-//---------------------------------------------------------------------------------//
-//                        Name: Alexnader Chiu                                     //
-//                        Project No. 2  Part No. 5                                //
-//                        Due Date: Sept. 11, 2014                                 //
-//                        Course: CPSC-121                                         //
-//                        Instructor: Dr. Ray Ahmadnia                             //
-//	This program will ask the user to input a number less than one thousand. The   //
-//  program will then display that number in words.                                //
-//---------------------------------------------------------------------------------//
+//================================================================================
+// File: Project 2.5.cpp
+//================================================================================
+// Programmer: Alexander Chiu                                     
+// Date: Sept. 11, 2014                                 
+// Course: CPSC-121
+// Time: Tuesday 3:30
+// Instructor: Dr. Ray Ahmadnia                                                    
+// Project: Project No. 2  Part No. 5 
+// 
+// Description:
+//	This program will ask the user to input a number less than one thousand. The   
+//  program will then display that number in words.                                                                                      
+//=================================================================================
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -15,8 +21,17 @@
 
 using namespace std;
 
+//== main =========================================================================
+//
+//=================================================================================
+
 int main()
 {
+	// Display time and date of program execution.
+	time_t p;
+	time(&p);
+	cout << "Time of execution: " << ctime(&p);
+
 	// Declare variables
 	int number, hundreds, tens, specialTens, ones;
 
@@ -24,7 +39,8 @@ int main()
 	cout << "Enter a number < 1000: ";
 	cin >> number;
 	cout << "\tYou entered ";
-	// Translate the number into words
+	
+	// Break down the entered number into numbers to translate the number into words
 	hundreds = number / 100;
 	tens = number % 100;
 	ones = number % 10;
@@ -122,38 +138,30 @@ int main()
 			default: break;
 		}
 	}
-	
-	// Display time and date of program execution.
-	time_t p;
-	time(&p);
-	cout << "\nTime of execution: " << ctime(&p) << endl;
+
+	cout << endl;
 
 	system("PAUSE");
 	return 0;
 }
 /*-------------------------OUTPUT-----------------------------------------------------
+Time of execution: Wed Sep 10 06:06:57 2014
 Enter a number < 1000: 405
         You entered Four Hundred Five
-Time of execution: Mon Sep 08 22:07:49 2014
 
-
+Time of execution: Wed Sep 10 06:07:29 2014
 Enter a number < 1000: 77
         You entered Seventy Seven
-Time of execution: Mon Sep 08 22:08:16 2014
 
-
+Time of execution: Wed Sep 10 06:07:49 2014
 Enter a number < 1000: 129
         You entered One Hundred Twenty Nine
-Time of execution: Mon Sep 08 22:08:32 2014
 
-
+Time of execution: Wed Sep 10 06:08:15 2014
 Enter a number < 1000: 350
         You entered Three Hundred Fifty
-Time of execution: Mon Sep 08 22:08:47 2014
 
-
+Time of execution: Wed Sep 10 06:08:34 2014
 Enter a number < 1000: 911
         You entered Nine Hundred Eleven
-Time of execution: Mon Sep 08 22:09:47 2014
-
 ------------------------------------------------------------------------------------*/
