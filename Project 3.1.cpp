@@ -34,9 +34,6 @@ using namespace std;
 
 int main()
 {	
-	// Set the console to use unicode instead of ASCII
-	SetConsoleOutputCP(1252);
-
 	// Display time and date of program execution.
 	time_t p;
 	time(&p);
@@ -52,11 +49,12 @@ int main()
 	cin >> start >> finish >> jump;
 
 	cout << endl;
-	cout << "$\t" << "\u00A5\t" << "\t\u00A3\t" <<"\u20AC\n";
+	cout << "$\t" << char(157) << "\t" << "\t" << char(156) << "\t" << char(238) 
+		<< endl;
 	
 	// Display the double solid line
 	for(int j = 1; j <= 40; j++)
-		cout << "=";
+		cout << char(205);
 	cout << endl;
 
 	// Calculate the currency values and display them
@@ -80,13 +78,13 @@ int main()
 	return 0;
 }
 /*-------------------------OUTPUT-----------------------------------------------------
-Time of execution: Sun Sep 14 12:59:57 2014
+Time of execution: Tue Sep 16 16:35:52 2014
 
 Please enter the start, finish, and jump values for the
 exchange table: 10 100 10
 
-$       ¥               £       €
-========================================
+$       ¥               £       ε
+════════════════════════════════════════
 10      1073.50         6.10    7.70
 20      2147.00         12.20   15.40
 30      3220.50         18.30   23.10
