@@ -1,5 +1,5 @@
 //================================================================================
-// File: Project 4.4.cpp
+// File: Project 4.4.cpp, data.txt
 //================================================================================
 // Programmer: Alexander Chiu                                     
 // Date: Sept. 25, 2014                                 
@@ -19,7 +19,6 @@
 #include <string>
 #include <ctime>
 #include <algorithm>
-#include <vector>
 #include <fstream>
 
 using namespace std;
@@ -38,10 +37,10 @@ void main()
 	// Delcare arrays and variables
 	string Name[7];
 	int Age[7];
-	int ageIndex;
+	int ageIndex, teenIndex;
 
 	// Read the text file (Using 7 because we know the size of the data file)
-	ifstream datafile;
+	fstream datafile;
 	datafile.open("data.txt");
 	if(!datafile)
 		cout << "Error opening data file\n";
@@ -71,7 +70,7 @@ void main()
 	cout << endl;
 
 	// Determine the Oldest student and find out who are the teenagers
-	// Determine the oldest and display the name
+	// Determine the oldest
 	int maxAge = Age[0];
 	for(int age = 0; age < 7; age++)
 	{
@@ -81,45 +80,25 @@ void main()
 			ageIndex = age;
 		}
 	}
-
-	cout << "Oldest Student: ";
-	switch(ageIndex)
-	{
-	case 0: cout << "Jefferson "; break;
-	case 1: cout << "Bill "; break;
-	case 2: cout << "Mary "; break;
-	case 3: cout << "Jack "; break;
-	case 4: cout << "Matthew "; break;
-	case 5: cout << "Claudia "; break;
-	case 6: cout << "Judy "; break;
-	}
-
-	// Determine who are the teenagers
+	cout << "Oldest Student: " << Name[ageIndex];
+	
+	// Determine the teenagers
 	cout << "\nName of teenager students: ";
-	int teenIndex;
 	for(int age = 0; age < 7; age++)
 	{
 		if(Age[age] >= 13 && Age[age] <= 19)
 		{
 			teenIndex = age;
-			switch(teenIndex)
-			{
-			case 0: cout << "Jefferson "; break;
-			case 1: cout << "Bill "; break;
-			case 2: cout << "Mary "; break;
-			case 3: cout << "Jack "; break;
-			case 4: cout << "Matthew "; break;
-			case 5: cout << "Claudia "; break;
-			case 6: cout << "Judy "; break;
-			}
+			cout << Name[teenIndex] << " ";
 		}
 	}
+	
 	cout << endl;
 
 	system("PAUSE");
 }
 /*-------------------------OUTPUT----------------------------------------------
-Time of execution: Sun Sep 21 15:22:37 2014
+Time of execution: Tue Sep 23 16:26:07 2014
 
 Name      Age
 ───────────────
