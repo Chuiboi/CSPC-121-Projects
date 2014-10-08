@@ -14,12 +14,10 @@
 //=================================================================================
 
 #include <iostream>
-#include <cmath>
 #include <iomanip>
 #include <string>
 #include <ctime>
 #include <algorithm>
-#include <fstream>
 #include <cctype>
 
 using namespace std;
@@ -101,7 +99,7 @@ void wordCounter(string text)
 	cout << "Number of words: " << wordCount + 1 << endl;
 }
 
-//=== caseCounter =================================================================
+//=== vowelCounter ===============================================================
 //
 // This function counts the number vowels.
 //
@@ -117,10 +115,8 @@ void vowelCounter(string text)
 	int vowelCount = 0;
 	for(int i = 0; i < text.length(); i++)
 	{
-		char c = text[i];
-		if(text[i] == 'a'|| text[i] == 'A' || text[i] == 'e'|| text[i] == 'E' ||
-		text[i] == 'i'|| text[i] == 'I' || text[i] == 'o'|| text[i] == 'O' ||
-		text[i] == 'u'|| text[i] == 'U')
+		char c = toupper(text[i]);
+		if(c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
 			vowelCount++;
 	}
 	cout << "Number of vowels: " << vowelCount << endl;
