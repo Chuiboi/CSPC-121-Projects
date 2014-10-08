@@ -12,24 +12,24 @@
 //	This program will display two arrays and their sorted arrays. It will also
 // display the Uppercase sorted string array.
 //=================================================================================
-
 #include <iostream>
-#include <cmath>
-#include <iomanip>
-#include <string>
-#include <ctime>
 #include <algorithm>
-#include <fstream>
+#include <string>
 #include <cctype>
+#include <time.h>
+
+// Template Function Prototypes
+template <class TYPE>
+void DisplayArray(TYPE x[], int n);
+template <class TYPE>
+void SortArray(TYPE x[], int n);
+
+// Function Prototype
+template <class TYPE>
+void SortUpper(TYPE x[], int n);
 
 using namespace std;
 
-// Function prototypes
-void displayArray(string text[]);
-void displayArray(int numArray[]);
-void sortArray(int numArray[]);
-void sortArray(string text[]);
-void sortUpper(string text[]);
 
 //== main =========================================================================
 //
@@ -43,106 +43,84 @@ int main()
 	cout << "Time of execution: " << ctime(&p) << endl;
 
 	// Declare arrays
-	int age[5] = {22, 33, 11, 16,10};
-	string name[4] = {"Bill", "Adam", "Mary", "David"};
+	int age[5] = { 22, 33, 11, 16, 10 };
+	string name[4] = { "Bill", "Adam", "Mary", "David" };
 
-	displayArray(age);
-	displayArray(name);
-	sortArray(age);
-	sortArray(name);
-	sortUpper(name);
+	// Call functions to display and sort.
+	cout << "Original Age Array: ";
+	DisplayArray(age, 5);
+	cout << "Original Name Array: ";
+	DisplayArray(name, 4);
+	cout << "Sorted Age Array: ";
+	SortArray(age, 5);
+	cout << "Sorted Name Array: ";
+	SortArray(name, 4);
+	cout << "Sorted Names in Uppercase: ";
+	SortUpper(name, 4);
 
 	system("PAUSE");
 	return 0;
 }
 
-//=== displayArray ================================================================
-//
+//=== DisplayArray ================================================================
 // This function will print the array 
 //
 // Input:
-//		text[]	-- string array that you want printed
-//		numArray[] -- integer array that you want printed
+//		x[]	-- array that you want printed
 // Output:
 //		Printed array of either strings or integers.
-//
 //=================================================================================
-void displayArray(string text[])
+template <class TYPE>
+void DisplayArray(TYPE x[], int n)
 {
-	cout << "Original Name Array: ";
-	for(int i = 0; i < 4; i++)
-		cout << text[i] << " ";
+	for (int i = 0; i < n; i++)
+		cout << x[i] << " ";
 	cout << endl;
 }
-
-void displayArray(int numArray[])
-{
-	cout << "Orginal array age: ";
-	for(int j = 0; j < 5; j++)
-		cout << numArray[j] << " ";
-	cout << endl;
-}
-
 //=== sortArray ===================================================================
-//
 // This function will sort the arrays and print them out.
 //
 // Input:
-//		text[]	-- string array that you want sorted and printed
-//		numArray[] -- integer array that you wanted sorted and printed
+//		x[]	-- array that you want sorted and printed
 // Output:
 //		Sorted array of either strings or integers.
-//
 //=================================================================================
-void sortArray(int numArray[])
+template <class TYPE>
+void SortArray(TYPE x[], int n)
 {
-	sort(numArray, numArray + 5);
-	cout << "Sorted Array Age: ";
-	for(int j = 0; j < 5; j++)
-		cout << numArray[j] << " ";
+	sort(x, x + n);
+	for (int i = 0; i < n; i++)
+		cout << x[i] << " ";
 	cout << endl;
 }
-
-void sortArray(string text[])
-{
-	sort(text,text + 4);
-	cout << "Sorted Array Name: ";
-	for(int i = 0; i < 4; i++)
-		cout << text[i] << " ";
-	cout << endl;
-}
-
-//=== sortUpper =================================================================
-//
+//=== SortUpper =================================================================
 // This function will sort the string array and capitalize all of the letters
 //
 // Input:
-//		text[]	-- string that you want the words to be sorted and capitalized.
-//
+//		x[]	-- string that you want the words to be sorted and capitalized.
 // Output:
 //		Sorted array of names with all letters capitalized will be printed.
-//
 //=================================================================================
-void sortUpper(string text[])
+template <class TYPE>
+void SortUpper(TYPE x[], int n)
 {
-	sort(text, text + 4);
-	cout << "Sorted Names in Uppercase: ";
-	for(int i = 0; i < 4; i++)
+	sort(x, x + n);
+	for(int i = 0; i < n; i++)
 	{
 		// Iterate through each element of the string array and perform
 		// toupper on the string element.
-		transform(text[i].begin(), text[i].end(), text[i].begin(), toupper);
-		cout << text[i] << " ";
+		transform(x[i].begin(), x[i].end(), x[i].begin(), toupper);
+		cout << x[i] << " ";
 	}
 	cout << endl;
 }
 /*-------------------------OUTPUT----------------------------------------------
-Time of execution: Sat Sep 27 14:31:02 2014
+Time of execution: Wed Oct 08 10:34:52 2014
 
-Orginal array age: 22 33 11 16 10
+Original Age Array: 22 33 11 16 10
 Original Name Array: Bill Adam Mary David
-Sorted Array Age: 10 11 16 22 33
-Sorted Array Name: Adam Bill David Mary
+Sorted Age Array: 10 11 16 22 33
+Sorted Name Array: Adam Bill David Mary
 Sorted Names in Uppercase: ADAM BILL DAVID MARY
 Press any key to continue . . .
 -----------------------------------------------------------------------------*/
