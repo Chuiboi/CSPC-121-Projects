@@ -6,7 +6,7 @@
 // Course: CPSC-121
 // Time: Tuesday 3:30
 // Instructor: Dr. Ray Ahmadnia                                                    
-// Project: Project No. 6  Part No. 34
+// Project: Project No. 6  Part No. 4
 // 
 // Description:
 // This program will display use two functions to display the arrays, and another 
