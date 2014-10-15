@@ -47,9 +47,9 @@ int main()
 	float GpaAve, AgeAve;
 
 	// Call functions to display the data and average age and GPA
-	CopyRecords("data2.txt", p);
+	CopyRecords("Text.txt", p);
 	Display(p);
-	AgeGpaAverage(p, GpaAve, AgeAve);
+	AgeGpaAverage(p, AgeAve, GpaAve);
 	Display(AgeAve, GpaAve);
 
 	system("PAUSE");
@@ -69,7 +69,7 @@ void CopyRecords(string fileName, RECORD x[])
 	dataFile.open(fileName, ios::in);
 	for (int i = 0; i < N; i++)
 	{
-		dataFile.getline(x[i].Name, 15, '/');
+		dataFile.getline(x[i].Name,16,'/');
 		dataFile >> x[i].Age;
 		dataFile >> x[i].Gpa;
 	}
@@ -85,9 +85,20 @@ void CopyRecords(string fileName, RECORD x[])
 //=================================================================================
 void Display(RECORD x[])
 {
+	// Generate Header
+	cout << left << setw(20) << "Name";
+	cout << left << setw(5) << "Age";
+	cout << left << setw(5) << "GPA";
+	cout << endl;
+	for (int j = 1; j <= 30; j++)
+		cout << char(196);
+	cout << endl;
+	// Display data in table
 	for (int i = 0; i < N; i++)
 	{
-		cout << x[i].Name << " " << x[i].Age << " " << x[i].Gpa;
+		cout << left << setw(20) << x[i].Name;
+		cout << left << setw(5) << x[i].Age;
+		cout << left << setw(5) << x[i].Gpa;
 	}
 	cout << endl;
 }
@@ -117,3 +128,16 @@ void AgeGpaAverage(RECORD x[], float& ageAve, float& gpaAve)
 	ageAve = totalAge / N;
 	gpaAve = totalGPA / N;
 }
+/*-------------------------OUTPUT----------------------------------------------
+Time of execution : Tue Oct 14 19 : 56 : 06 2014
+
+Name                Age  GPA
+──────────────────────────────
+Martin Smith        22   2.2
+Austin Clinton     18   3.1
+Johnson            19   2.9
+Maggie Jones       23   2.3
+Tyler W Brown      16   3.4
+Their AGE avereage is 19.6 and their GPA avereage is 2.78
+Press any key to continue . . .
+-----------------------------------------------------------------------------*/
