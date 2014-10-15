@@ -96,7 +96,7 @@ void Display(RECORD x[])
 	// Display data in table
 	for (int i = 0; i < N; i++)
 	{
-		cout << left << setw(20) << x[i].Name;
+		cout << left << setw(20) << _strupr(x[i].Name);
 		cout << left << setw(5) << x[i].Age;
 		cout << left << setw(5) << x[i].Gpa;
 	}
@@ -129,15 +129,15 @@ void AgeGpaAverage(RECORD x[], float& ageAve, float& gpaAve)
 	gpaAve = totalGPA / N;
 }
 /*-------------------------OUTPUT----------------------------------------------
-Time of execution : Tue Oct 14 19 : 56 : 06 2014
+Time of execution: Tue Oct 14 22:53:56 2014
 
 Name                Age  GPA
 ──────────────────────────────
-Martin Smith        22   2.2
-Austin Clinton     18   3.1
-Johnson            19   2.9
-Maggie Jones       23   2.3
-Tyler W Brown      16   3.4
+MARTIN SMITH        22   2.2
+AUSTIN CLINTON     18   3.1
+JOHNSON            19   2.9
+MAGGIE JONES       23   2.3
+TYLER W BROWN      16   3.4
 Their AGE avereage is 19.6 and their GPA avereage is 2.78
 Press any key to continue . . .
 -----------------------------------------------------------------------------*/
