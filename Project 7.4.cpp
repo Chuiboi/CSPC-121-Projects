@@ -38,6 +38,13 @@ int main()
 	system("PAUSE");
 	return 0;
 }
+//=== RecursiveThree ==============================================================
+// This function will calculate the nth sum of three to the nth power.
+// Input:
+//		n -- integer index of the number you want to be calculated
+// Output:
+//		sum of n terms for three to the nth power
+//=================================================================================
 double RecursiveThree(int n)
 {
 	if (n == 2)
