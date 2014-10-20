@@ -2,7 +2,7 @@
 // File: Project 7.1.cpp
 //================================================================================
 // Programmer: Alexander Chiu                                     
-// Date: Oct. 24, 2014                                 
+// Date: Oct. 23, 2014                                 
 // Course: CPSC-121
 // Time: Tuesday 3:30
 // Instructor: Dr. Ray Ahmadnia                                                    
