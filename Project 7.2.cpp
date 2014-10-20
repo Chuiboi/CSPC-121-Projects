@@ -1,22 +1,20 @@
 //================================================================================
-// File: Project 7.1.cpp
+// File: Project 7.2.cpp
 //================================================================================
 // Programmer: Alexander Chiu                                     
-// Date: Oct. 24, 2014                                 
+// Date: Oct. 23, 2014                                 
 // Course: CPSC-121
 // Time: Tuesday 3:30
 // Instructor: Dr. Ray Ahmadnia                                                    
-// Project: Project No. 7  Part No. 1
+// Project: Project No. 7  Part No. 2
 // 
 // Description:
-// This program will read in user provided data into dynamic arrays. It will then
-// display the contents of each array.
+// This program will read in a file and determine the size of the dynamic array. 
+// It will then read in the data and display the data.
 //=================================================================================
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <ctime>
-#include <algorithm>
-#include <string>
 #include <iomanip>
 #include <fstream>
 // Declare structure
@@ -26,7 +24,6 @@ struct PERSON
 	float gpa;
 	char name[20];
 };
-
 using namespace std;
 void Display(PERSON x[], int numOfData);
 //== main =========================================================================
@@ -45,19 +42,19 @@ int main()
 	dataFile.open("two.txt", ios::in);
 	dataFile.get(N);
 	PERSON *p;
-	p = new PERSON[int(N)];
+	p = new PERSON[int(N - 48)];
 
 	// Read in data
-	for (int i = 0; i < int(N); i++)
+	for (int i = 0; i < int(N-48); i++)
 	{
 		dataFile >> p[i].age;
 		dataFile >> p[i].gpa;
-		dataFile.getline(p[i].name, 20);
+		dataFile.getline(p[i].name, 20, '\n');
 	}
 	dataFile.close();
 
 	// Display data
-	Display(p,int(N));
+	Display(p,int(N-48));
 	
 	system("PAUSE");
 	return 0;
@@ -69,7 +66,7 @@ int main()
 // Output:
 //		Display either the array structure
 //=================================================================================
-void Display(PERSON *x, int numOfData)
+void Display(PERSON x[], int numOfData)
 {
 	// Generate Header
 	cout << left << setw(5) << "Age";
@@ -85,6 +82,20 @@ void Display(PERSON *x, int numOfData)
 		cout << left << setw(5) << x[i].age;
 		cout << left << setw(5) << x[i].gpa;
 		cout << left << setw(20) << x[i].name;
+		cout << endl;
 	}
 	cout << endl;
 }
+/*-------------------------OUTPUT-----------------------------------------------------
+Time of execution: Mon Oct 20 11:45:49 2014
+
+Age  GPA  Name
+──────────────────────────────
+22   2.2   Bill Clinton
+33   3.3   Phil Jackson
+44   4     Mary A Johnson
+25   2.5   Adam Smith
+65   3.2   George W Bush
+
+Press any key to continue . . .
+------------------------------------------------------------------------------------*/
