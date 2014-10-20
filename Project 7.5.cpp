@@ -2,7 +2,7 @@
 // File: Project 7.5.cpp
 //================================================================================
 // Programmer: Alexander Chiu                                     
-// Date: Oct. 24, 2014                                 
+// Date: Oct. 23, 2014                                 
 // Course: CPSC-121
 // Time: Tuesday 3:30
 // Instructor: Dr. Ray Ahmadnia                                                    
@@ -74,9 +74,9 @@ double NonRecursiveFibonacci(int n)
 	{
 		for (int i = 3; i <= n; i++)
 		{
-				num3 = num1 + num2;
-				num1 = num2;
-				num2 = num3;
+			num3 = num1 + num2;
+			num1 = num2;
+			num2 = num3;
 		}
 	}
 	return num3;
