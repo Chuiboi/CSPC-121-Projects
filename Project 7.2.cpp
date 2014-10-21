@@ -37,15 +37,15 @@ int main()
 	cout << "Time of execution: " << ctime(&c) << endl;
 
 	// Determine size of array and create a dynamic array
-	char N;
+	int N;
 	fstream dataFile;
 	dataFile.open("two.txt", ios::in);
-	dataFile.get(N);
+	dataFile >> N;
 	PERSON *p;
-	p = new PERSON[int(N - 48)];
+	p = new PERSON[N];
 
 	// Read in data
-	for (int i = 0; i < int(N-48); i++)
+	for (int i = 0; i < N; i++)
 	{
 		dataFile >> p[i].age;
 		dataFile >> p[i].gpa;
@@ -54,8 +54,8 @@ int main()
 	dataFile.close();
 
 	// Display data
-	Display(p,int(N-48));
-	
+	Display(p, N);
+
 	system("PAUSE");
 	return 0;
 }
