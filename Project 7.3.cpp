@@ -2,7 +2,7 @@
 // File: Project 7.3.cpp
 //================================================================================
 // Programmer: Alexander Chiu                                     
-// Date: Oct. 23, 2014                                 
+// Date: Oct. 24, 2014                                 
 // Course: CPSC-121
 // Time: Tuesday 3:30
 // Instructor: Dr. Ray Ahmadnia                                                    
@@ -20,6 +20,7 @@
 #include <cstring>
 
 using namespace std;
+// Declare function prototypes
 //== main =========================================================================
 //
 //=================================================================================
@@ -31,11 +32,13 @@ int main()
 	cout << "Time of execution: " << ctime(&p) << endl;
 
 	// Declare variables
-	char fullName[30], friendName[20], firstName[20];
-
+	char fullName[30];
+	char friendName[30];
+	char firstName[20];
+	
 	// Ask for Name
 	cout << "Enter your full name: ";
-	cin.getline(fullName,30,'\n');
+	cin.getline(fullName, 30, '\n');
 
 	// Name length, lower case name, and upper case name
 	cout << "\tYour name's length is " << strlen(fullName) << endl;
@@ -44,21 +47,20 @@ int main()
 	cout << endl;
 
 	// Find the first name and turn it into a char array
-	string firstN;
-	string fullN = string(fullName);
+	// First find the index for the loop. Then create the firstName array
+	char* pch = (char*)memchr(fullName, ' ', strlen(fullName));
+	int index = int(pch - fullName);
 
-	for (int i = 0; i < fullN.find(' '); i++)
-		firstN += fullN[i];
-
-	strcpy(firstName, firstN.c_str());
+	for (int i = 0; i < index; i++)
+		firstName[i] = fullName[i];
+	firstName[index] = '\0';
 
 	// Ask user for friend's first name
 	cout << firstName << ", what is your friend's first name? ";
-	cin.getline(friendName, 20, '\n');
-
+	cin.getline(friendName, 30, '\n');
+	
 	// Convert the friend's first name to uppercase and compare with user first name
 	_strupr(friendName);
-
 	if (strcmp(friendName, firstName) == 0)
 		cout << "\tYour name is the same as your friend's name." << endl;
 	else
