@@ -21,7 +21,7 @@ using namespace std;
 class FIVE
 {
 private: int x[7];
-public: 
+public:
 	void Read() // read data in array x
 	{
 		cout << "Enter 7 integer data: ";
@@ -39,9 +39,9 @@ public:
 		mx = mn = x[0];
 		for (int i = 0; i < 7; i++)
 		{
-			if (x[i] > mx) 
+			if (x[i] > mx)
 				mx = x[i];
-			if (x[i] < mn) 
+			if (x[i] < mn)
 				mn = x[i];
 		}
 	}
@@ -52,6 +52,7 @@ public:
 			total += x[i];
 		return total;
 	}
+	~FIVE(){ system("PAUSE"); }
 };
 //== main =========================================================================
 //=================================================================================
@@ -61,11 +62,11 @@ int main()
 	time_t c;
 	time(&c);
 	cout << "Time of execution: " << ctime(&c) << endl;
-	
+
 	// Ask user for data and display it
 	FIVE a;
 	a.Read();
-	cout << "All data: "; 
+	cout << "All data: ";
 	a.Display();
 
 	// Find the max, min, and total of array
@@ -74,13 +75,11 @@ int main()
 
 	cout << "Maximum = " << max << " Minimum = " << min << " Total = " << a.FindTotal();
 	cout << endl;
-	
-	system("PAUSE");
+
 	return 0;
 }
 /*-------------------------OUTPUT-----------------------------------------------------
 Time of execution: Sat Nov 01 10:47:46 2014
-
 Enter 7 integer data: 22 77 33 99 11 10 23
 All data: 22 77 33 99 11 10 23
 Maximum = 99 Minimum = 10 Total = 275
