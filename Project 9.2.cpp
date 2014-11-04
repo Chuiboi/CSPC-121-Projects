@@ -23,11 +23,11 @@ using namespace std;
 class SIX
 {
 private: struct PERSON
-{
-			 string name;
-			 int age;
-};
-		 PERSON p[4];
+	{
+		string name;
+		int age;
+	};
+	PERSON p[4];
 public:
 	void ReadData() // Read data into array p
 	{
