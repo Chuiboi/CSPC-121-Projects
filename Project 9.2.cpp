@@ -1,12 +1,12 @@
 //================================================================================
-// File: Project 9.5.cpp
+// File: Project 9.6.cpp
 //================================================================================
 // Programmer: Alexander Chiu                                     
 // Date: Nov. 6, 2014                                 
 // Course: CPSC-121
 // Time: Tuesday 3:30
 // Instructor: Dr. Ray Ahmadnia                                                    
-// Project: Project No. 9  Part No. 5
+// Project: Project No. 9  Part No. 6
 // 
 // Description:
 // This program will ask the user for the data. The class structure will use its
