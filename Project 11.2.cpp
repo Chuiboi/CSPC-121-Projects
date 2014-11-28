@@ -1,16 +1,17 @@
 //================================================================================
-// File: Project 10.1.cpp
+// File: Project 11.2.cpp
 //================================================================================
 // Programmer: Alexander Chiu                                     
-// Date: Nov. 13, 2014                                 
+// Date: Dec. 2, 2014                                 
 // Course: CPSC-121
 // Time: Tuesday 3:30
 // Instructor: Dr. Ray Ahmadnia                                                    
-// Project: Project No. 10  Part No. 1
+// Project: Project No. 11  Part No. 2
 // 
 // Description:
-// This program will ask the user for the vertices. It will then draw a rectangle
-// and calculate the perimeter.
+// This program will ask the user for a sentence to be displayed in reverse order.
+// It will then prompt the user for an integer and convert that number into 
+// another base.
 //=================================================================================
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
