@@ -9,8 +9,8 @@
 // Project: Project No. 11  Part No. 1
 // 
 // Description:
-// This program will generate two objects and populate the objects with data. 
-// It will then display both the unsorted and sorted arrays.
+// This program will ask the user for the vertices. It will then draw a rectangle
+// and calculate the perimeter.
 //=================================================================================
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
@@ -29,50 +29,6 @@ public: void ReadData();
 		void SortArray();
 		~TWO(){};
 };
-//=== ReadData ====================================================================
-// This function will populate the one-dimensional array
-//=================================================================================
-void TWO<int,10>::ReadData()
-{
-	srand(time(0));
-	for (int i = 0; i < 10; i++)
-		a[i] = rand() % 20;
-}
-void TWO<string, 12>::ReadData()
-{
-	a[0] = "Jan";
-	a[1] = "Feb";
-	a[2] = "Mar";
-	a[3] = "Apr";
-	a[4] = "May";
-	a[5] = "Jun";
-	a[6] = "Jul";
-	a[7] = "Aug";
-	a[8] = "Sep";
-	a[9] = "Oct";
-	a[10] = "Nov";
-	a[11] = "Dec";
-}
-
-//=== DisplayData =================================================================
-// This function will display the one-dimensional array
-//=================================================================================
-template <class T, int n>
-void TWO<T, n>::DisplayData()
-{
-	for (int i = 0; i < n; i++)
-		cout << a[i] << " ";
-	cout << endl;
-}
-//=== SortArray ===================================================================
-// This function will sort the one-dimensional array
-//=================================================================================
-template <class T, int n>
-void TWO<T, n>::SortArray()
-{
-	sort(a, a + n);
-}
-
 //== main =========================================================================
 //=================================================================================
 int main()
@@ -104,6 +60,48 @@ int main()
 
 	system("PAUSE");
 	return 0;
+}
+//=== ReadData ====================================================================
+// This function will populate the one-dimensional array
+//=================================================================================
+void TWO<int, 10>::ReadData()
+{
+	srand(time(0));
+	for (int i = 0; i < 10; i++)
+		a[i] = rand() % 20;
+}
+void TWO<string, 12>::ReadData()
+{
+	a[0] = "Jan";
+	a[1] = "Feb";
+	a[2] = "Mar";
+	a[3] = "Apr";
+	a[4] = "May";
+	a[5] = "Jun";
+	a[6] = "Jul";
+	a[7] = "Aug";
+	a[8] = "Sep";
+	a[9] = "Oct";
+	a[10] = "Nov";
+	a[11] = "Dec";
+}
+//=== DisplayData =================================================================
+// This function will display the one-dimensional array
+//=================================================================================
+template <class T, int n>
+void TWO<T, n>::DisplayData()
+{
+	for (int i = 0; i < n; i++)
+		cout << a[i] << " ";
+	cout << endl;
+}
+//=== SortArray ===================================================================
+// This function will sort the one-dimensional array
+//=================================================================================
+template <class T, int n>
+void TWO<T, n>::SortArray()
+{
+	sort(a, a + n);
 }
 /*-------------------------OUTPUT-----------------------------------------------------
 Time of execution : Thu Nov 27 11 : 50 : 30 2014
