@@ -9,8 +9,8 @@
 // Project: Project No. 11  Part No. 1
 // 
 // Description:
-// This program will ask the user for the vertices. It will then draw a rectangle
-// and calculate the perimeter.
+// This program will create two objects. It will then display the unsorted arrays
+// and then sort and display the arrays again.
 //=================================================================================
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
